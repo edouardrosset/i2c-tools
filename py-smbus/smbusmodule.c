@@ -158,7 +158,7 @@ SMBus_set_addr(SMBus *self, int addr)
 	int ret = 0;
 
 	if (self->addr != addr) {
-		ret = ioctl(self->fd, I2C_SLAVE, addr);
+		ret = ioctl(self->fd, I2C_SLAVE_FORCE, addr);
 		self->addr = addr;
 	}
 
